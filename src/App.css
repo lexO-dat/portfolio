@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hidden-mobile {
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.hidden-mobile.scale-125 {
+    transform: scale(1.25);
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .hidden-mobile {
+        display: none;
+    }
+}
+
+
+/*https://lexo-dat.github.io/LucasAbelloPortfolio/*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body
+{
+    overflow-x: hidden;
+}
+  
+::-webkit-scrollbar {
+    display: none;
+}
+
