@@ -24,15 +24,23 @@ export const HorizontalScrollCarousel = () => {
 
     return (
       <section ref={targetRef} className="h-[300vh] bg-black">
-        <div className="lg:ml-20 sticky top-0 flex flex-col items-center overflow-hidden z-10">
+        <div className={`lg:ml-20 sticky top-0 flex-col flex items-center overflow-hidden z-10`}>
           <div> 
               <h1 className={`text-2xl lg:text-3xl font-bold text-center ${isMobile ? 'mt-16' : 'mt-20'} lg:mb-10 mb-5 lg:mr-16 text-white`}>Featured Projects:</h1>
           </div>
-          <motion.div style={{ x }} className="flex gap-4">
-            {cards.map((card) => {
-              return <Cards card={card} key={card.id} />;
-            })}
-          </motion.div>
+          {isMobile ? (
+            <div className="flex flex-col gap-4">
+              {cards.map((card) => {
+                return <Cards card={card} key={card.id} />;
+              })}
+            </div>
+          ) : (
+            <motion.div style={{ x }} className="flex gap-4">
+              {cards.map((card) => {
+                return <Cards card={card} key={card.id} />;
+              })}
+            </motion.div>
+          )}
           <div className="bg-white flex items-center justify-center mt-16 lg:mr-20 mb-10">
             <Link to="/projects">
               <button className="px-4 py-2 font-medium bg-black text-white w-fit transition-all shadow-[3px_3px_0px_black] 

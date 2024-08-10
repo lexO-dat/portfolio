@@ -5,7 +5,7 @@ import {Cards} from '../FeaturedProjects/Cards';
 const ProjectsPage = () => {
     return (
         <section className="h-scren bg-black">
-          <div className="lg:ml-20 mt-14 lg:mt-20 flex flex-col items-center overflow-hidden z-10 mb-20">
+          <div className="lg:ml-20 mt-14 lg:mt-20 flex flex-col items-center overflow-hidden z-10 mb-28">
             <div> 
                 <h1 className={`text-2xl lg:text-3xl font-bold text-center lg:mb-10 mb-2 lg:mr-16 text-white`}>Proyects and Experiments</h1>
             </div>

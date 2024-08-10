@@ -6,7 +6,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 const Landing = () => {
   return (
     <div className="bg-black text-white h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl lg:text-5xl font-bold text-white lg:mt-20 mt-16">Lucas Abello</h1>
+      <h1 className="text-4xl lg:text-5xl font-bold text-white lg:mt-20">Lucas Abello</h1>
       <p className="text-center text-sm mt-4 max-w-md">
         Computer Engineering student with a passion for technology and programming. Enthusiast in software development and artificial intelligence.
       </p>

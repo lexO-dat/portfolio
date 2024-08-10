@@ -4,9 +4,8 @@ import React from 'react';
 const ContactForm = () => {
     return (
         <section claclassNamess="bg-black">
-            <div className="py-20 lg:py-16 px-4 mx-auto max-w-screen-md">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">Contact Me</h2>
-                <p className="mb-8 lg:mb-16 font-light text-center text-white sm:text-xl">Have questions or want to work together? Get in touch using the form below!</p>
+            <div className=" py-28 lg:py-16 px-4 mx-auto max-w-screen-md">
+                <p className="mb-8 lg:mb-8 font-light text-center text-white sm:text-xl">Have questions or want to work together? Get in touch using the form below!</p>
                 <form action="#" className="space-y-8">
                     <div>
                         <label for="email" className="block mb-2 text-sm font-medium text-white">Your email</label>

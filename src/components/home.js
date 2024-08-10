@@ -12,11 +12,11 @@ const Home = () => {
 
     useEffect(() => {
         Events.scrollEvent.register('begin', function () {
-            console.log("begin", arguments);
+            //console.log("begin", arguments);
         });
 
         Events.scrollEvent.register('end', function () {
-            console.log("end", arguments);
+            //console.log("end", arguments);
         });
 
         scrollSpy.update();
@@ -26,6 +26,32 @@ const Home = () => {
             Events.scrollEvent.remove('end');
         };
     }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['landing', 'about', 'hobbies', 'projects', 'contact'];
+            let current = currentSection;
+
+            for (let i = 0; i < sections.length; i++) {
+                const section = document.getElementById(sections[i]);
+                const bounding = section.getBoundingClientRect();
+                const halfScreenHeight = window.innerHeight / 2;
+
+                if (bounding.top < halfScreenHeight && bounding.bottom > halfScreenHeight) {
+                    current = sections[i];
+                    break;
+                }
+            }
+
+            if (current !== currentSection) {
+                setCurrentSection(current);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [currentSection]);
 
     const handleClick = (section) => {
         setCurrentSection(section);
@@ -83,19 +109,19 @@ const Home = () => {
                     </li>
                 </ul>
             </div>
-            <Element name="landing">
+            <Element name="landing" id="landing">
                 <Landing />
             </Element>
-            <Element name="about">
+            <Element name="about" id="about">
                 <About />
             </Element>
-            <Element name="hobbies">
+            <Element name="hobbies" id="hobbies">
                 <Hobbie />
             </Element>
-            <Element name="projects">
+            <Element name="projects" id="projects">
                 <Projects />
             </Element>
-            <Element name="contact">
+            <Element name="contact" id="contact">
                 <ContactForm />
             </Element>
         </div>
