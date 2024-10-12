@@ -47,7 +47,7 @@ const cards = [
       url: "/imgs/abstract/1.jpg",
       title: " S.O. process playground ",
       description: "This project is intended to make a system that renders the hierarchy tree between processes and shows graphically everything related to processes / threads for people... ",
-      skills: ["Python", "Golang", "Docker"],
+      skills: ["C++", "Docker"],
       demo: "no",
       info: "no",
       demoUrl: "https://github.com/lexO-dat/playground-so",
