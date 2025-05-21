@@ -8,6 +8,11 @@ import { BiLogoPostgresql } from 'react-icons/bi';
 import { SiTensorflow, SiOpencv, SiCplusplus } from 'react-icons/si';
 import { TbBrandGolang } from "react-icons/tb";
 
+/*
+url for fetching github:
+curl -s "https://api.github.com/users/lexO-dat/repos?sort=updated&direction=desc" -> gives all the repos
+curl -s "https://api.github.com/repos/lexO-dat/leetcode_problems/languages" -> gives the languages used in the repo
+*/
 
 const skillIcons = {
   Python: FaPython,

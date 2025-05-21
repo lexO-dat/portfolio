@@ -1,5 +1,3 @@
-import react from 'react';
-import { motion, useTransform, useScroll } from "framer-motion";
 import {Cards} from '../FeaturedProjects/Cards';
 
 const ProjectsPage = () => {
