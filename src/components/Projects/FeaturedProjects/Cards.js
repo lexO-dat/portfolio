@@ -43,8 +43,8 @@ export const Cards = ({ card }) => {
     <div>
       <div className="flex bg-black" key={card.id}>
         <div>
-          <div className="p-3 mt-10 w-56 h-60 lg:h-72 lg:w-80 grid grid-cols-1 cursor-default select-none rounded border-white border-2 shadow-lg">
-            <div className="font-semibold text-xl mb-2 ml-2 flex justify-center items-center text-white">
+          <div className="p-3 mt-10 w-full grid grid-cols-1 cursor-default select-none rounded border-white border-2 shadow-lg flex flex-col justify-between">
+            <div className="font-semibold text-lg sm:text-xl mb-2 ml-2 flex justify-center items-center text-white">
               {card.title}
             </div>
             <div className="my-1 mr-1">
@@ -57,7 +57,7 @@ export const Cards = ({ card }) => {
               href={card.demoUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3 py-1 lg:px-5 lg:py-2 font-medium bg-black text-white transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] border-2 border-white"
+              className="px-3 py-2 lg:px-5 font-medium bg-black text-white transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] border-2 border-white"
             >
               Code
             </a>
@@ -67,7 +67,7 @@ export const Cards = ({ card }) => {
                 {card.skills?.map((skill) => {
                   const IconComponent = skillIcons[skill];
                   return IconComponent ? (
-                    <IconComponent key={skill} className="text-xl lg:text-2xl lg:mt-1 text-white" />
+                    <IconComponent key={skill} className="text-lg sm:text-xl lg:text-2xl lg:mt-1 text-white" />
                   ) : null;
                 })}
               </div>
