@@ -1,6 +1,6 @@
-# React Terminal Portfolio
+# Personal Portfolio
 
-This project is a personal portfolio built using React, simulating a bash terminal. The portfolio includes a landing page with static content and a terminal mode where users can interact with the portfolio by typing commands. The terminal allows navigation through folders, listing folder contents, reading files, executing scripts, and more.
+This project is a personal portfolio built using React. The portfolio features a modern, responsive design with multiple pages showcasing projects, resume, and contact information. It includes dynamic project loading from GitHub API with fallback data and an integrated contact form across all pages.
 
 ## Getting Started
 
@@ -14,18 +14,19 @@ This project is a personal portfolio built using React, simulating a bash termin
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/lexO-dat/react-terminal-portfolio.git
+   git clone https://github.com/lexO-dat/portfolio.git
    ```
 2. Navigate to the project directory:
 
    ```bash
-   cd react-terminal-portfolio
+   cd portfolio
    ```
 3. Install dependencies:
 
    ```bash
    npm install
    ```
+
 ### Running the Application
 Start the React development server:
 
@@ -35,35 +36,53 @@ Start the React development server:
 
 Open your browser and visit http://localhost:3000 to view the application.
 
-# Project Structure
+## Project Structure
 
-This React application follows a modular structure with the following key components and files:
+This React application follows a modular structure with the following key components and directories:
 
 - **`src/App.js`**: Main component defining the routes and structure of the application.
 
-- **`src/index.js`**: Entry point of the application rendering the `App` component.
+- **`src/index.js`**: Entry point of the application rendering the App component.
 
-- **`src/terminal-page/terminal.js`**: Terminal component containing the logic for handling commands, navigation, and displaying terminal interface.
+- **`src/components/`**: Contains all React components organized by functionality:
+  - **`Home/`**: Landing page component with hero section and featured content
+  - **`Projects/`**: Project showcase components including featured projects and project cards
+  - **`Contact/`**: Contact form component and dedicated contact page
+  - **`Navbar/`**: Navigation sidebar component
+  - **`Resume.js`**: Resume/CV page component
 
-- **`src/components/static/home.js`**: Landing page component with static content.
+- **`src/utils/`**: Utility functions and data:
+  - **`projectData.js`**: GitHub API integration and hardcoded project fallback data
 
-- **`src/App.css` and `src/terminal-page/terminal.css`**: CSS files for styling.
+- **`src/data/`**: Static data files for portfolio content
 
-  # Features
+- **`public/`**: Static assets including images and PDF resume
 
-This React terminal portfolio comes with the following key features:
+## Features
 
-- **Terminal Interface:** Simulates a bash terminal, providing a command-line interface for interaction.
+This modern React portfolio includes the following key features:
 
-- **Navigation:** Use the `cd` command to navigate through folders within the terminal.
+- **Responsive Design**: Fully responsive layout optimized for desktop, tablet, and mobile devices
 
-- **Command List:** Type `ls` to list the contents of the current folder, providing an overview of available directories and files.
+- **Dynamic Project Loading**: Automatically fetches projects from GitHub API with fallback to hardcoded data
 
-- **File Reading:** Utilize the `cat` command to read the contents of a specific file, allowing users to access detailed information.
+- **Multi-page Navigation**: Clean navigation between Home, Projects, Resume, and Contact pages
 
-- **Script Execution:** Execute scripts using the `./[script.sh]` command, enabling the running of custom scripts or commands.
+- **PDF Resume**: Downloadable PDF resume with inline viewing option
 
-- **Help Command:** Type `help` within the terminal to display a list of available commands, providing users with guidance on how to interact with the portfolio.
+- **Smooth Transitions**: Page transitions with automatic scroll-to-top functionality
+
+- **GitHub Integration**: Real-time project data fetching with rate limit handling
+
+- **Mobile Optimization**: Touch-friendly interface with optimized layouts for mobile devices
+
+## Technologies Used
+
+- React 18
+- React Router DOM for navigation
+- Tailwind CSS for styling
+- React Icons for iconography
+- GitHub API for dynamic content
 
 
-   
+

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { RiHome5Line } from 'react-icons/ri';
-import { FaTerminal } from 'react-icons/fa';
 import { FaCode, FaClipboardUser } from 'react-icons/fa6';
+import { MdContactMail } from 'react-icons/md';
 import NavItem from './NavItem';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -16,7 +16,6 @@ const IconSideNav = () => {
 const SideNav = () => {
   const location = useLocation();
   const [selected, setSelected] = useState(0);
-
   useEffect(() => {
     switch (location.pathname) {
       case '/':
@@ -24,20 +23,17 @@ const SideNav = () => {
         break;
       case '/projects':
         setSelected(1);
-        break;
-      case '/resume':
+        break;      case '/resume':
         setSelected(2);
         break;
-      case '/terminal':
+      case '/contact':
         setSelected(3);
         break;
       default:
         setSelected(0);
     }
-  }, [location.pathname]);
-
-  return (
-    <nav className="h-[5rem] lg:h-full w-full lg:w-16 bg-black p-4 flex lg:flex-col flex-row items-center justify-around lg:justify-start gap-4 fixed bottom-0 lg:top-0 
+  }, [location.pathname]);  return (
+    <nav className="h-[5rem] lg:h-screen w-full lg:w-20 bg-black p-4 flex lg:flex-col flex-row items-center justify-around lg:justify-center gap-4 lg:gap-8 fixed bottom-0 lg:top-0 
                     lg:left-0 border-t-2 lg:border-t-0 lg:border-r-2 border-gray-900 z-50">
       <Link to="/">
       <NavItem selected={selected === 0} id={0} setSelected={setSelected}>
@@ -50,20 +46,18 @@ const SideNav = () => {
           <FaCode />
       </NavItem>
       <p className="mt-1 lg:block text-white text-[10px]">Projects</p>
-      </Link>
-
-      <Link to="/resume">
+      </Link>      <Link to="/resume">
       <NavItem selected={selected === 2} id={2} setSelected={setSelected}>
         <FaClipboardUser />
       </NavItem>
       <p className="ml-1 mt-1 lg:block text-white text-[10px]">Resume</p>
       </Link>
 
-      <Link to="/terminal">
+      <Link to="/contact">
       <NavItem selected={selected === 3} id={3} setSelected={setSelected}>
-            <FaTerminal />
+        <MdContactMail />
       </NavItem>
-      <p className="mt-1 lg:block text-white text-[10px]">Terminal</p>
+      <p className="ml-1 mt-1 lg:block text-white text-[10px]">Contact</p>
       </Link>
     </nav>
   );

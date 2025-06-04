@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 const About = () => {
     return (
@@ -6,8 +6,16 @@ const About = () => {
             <div className='bg-black flex flex-col items-center justify-center text-white h-screen'>
                 <h1 className='text-4xl mb-10'>About Me</h1>
                 <div className='flex flex-col justify-center lg:flex-row lg:justify-wrap lg:gap-4'>
-                    <p className='w-72 lg:w-[30%] lg:ml-16'>I am a computer engineering student with a passion for technology since my childhood. I have actively participated in numerous competitive programming events, such as Ieeextreme, Python Generative AI Hackathon and the ICPC and the AV Innovate demonstrating a satisfactory performance both as a team player and as an individual.</p>
-                    <p className='w-72 mt-8 lg:w-[30%] lg:mt-0'>I have worked on personal projects as a backend developer. However, my main interest lies in expanding my skills in software development and cybersecurity.</p>
+                    <p className='w-72 lg:w-[30%] lg:ml-16'>
+                        I am a computer science student specializing in AI applications with hands-on experience in multi-agent systems, 
+                        LLM fine-tuning, NLP, and RAG implementations. I have experience developing hierarchical ML architectures and 
+                        software-hardware integrations.
+                    </p>
+                    <p className='w-72 mt-8 lg:w-[30%] lg:mt-0'>
+                        Active competitor in IEEE Xtreme and hackathons, demonstrating problem-solving and collaborative skills. 
+                        Seeking to advance AI-driven software development with real-world impact while continuously expanding my 
+                        technical expertise.
+                    </p>
                 </div>
             </div>
         </>

@@ -39,44 +39,54 @@ export const Cards = ({ card }) => {
   let maxLength = 0;
   const isMobile = useMediaQuery({ query: `(max-width: 1024px)` });
   if (isMobile) {
-    maxLength = 100;
+    maxLength = 120;
   } else {
-    maxLength = 200;
+    maxLength = 180;
   }
 
   return (
-    <div>
-      <div className="flex bg-black" key={card.id}>
-        <div>
-          <div className="p-3 mt-10 w-full grid grid-cols-1 cursor-default select-none rounded border-white border-2 shadow-lg flex flex-col justify-between">
-            <div className="font-semibold text-lg sm:text-xl mb-2 ml-2 flex justify-center items-center text-white">
-              {card.title}
-            </div>
-            <div className="my-1 mr-1">
-              <p className="text-white text-sm flex items-center justify-center">
-                {truncateDescription(card.description, maxLength)}
-              </p>
-            </div>
-            <div className="flex items-center justify-center mb-2">
+    <div className="w-full max-w-sm">
+      <div className="bg-black border-white border-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-default select-none h-full flex flex-col">
+        <div className="p-6 flex-grow flex flex-col">
+          <div className="font-semibold text-xl mb-4 text-center text-white">
+            {card.title}
+          </div>
+          
+          <div className="flex-grow mb-4">
+            <p className="text-white text-sm text-center leading-relaxed">
+              {truncateDescription(card.description, maxLength)}
+            </p>
+          </div>
+          
+          <div className="flex items-center justify-center mb-4">
             <a 
               href={card.demoUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3 py-2 lg:px-5 font-medium bg-black text-white transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] border-2 border-white"
+              className="px-4 py-2 font-medium bg-black text-white transition-all shadow-[3px_3px_0px_white] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] border-2 border-white hover:bg-white hover:text-black"
             >
-              Code
+              View Code
             </a>
-            </div>
-            <div>
-              <div className="flex flex-row space-x-2 justify-center">
-                {card.skills?.map((skill) => {
-                  const IconComponent = skillIcons[skill];
-                  return IconComponent ? (
-                    <IconComponent key={skill} className="text-lg sm:text-xl lg:text-2xl lg:mt-1 text-white" />
-                  ) : null;
-                })}
-              </div>
-            </div>
+          </div>
+          
+          <div className="flex flex-row flex-wrap gap-2 justify-center">
+            {card.skills?.map((skill) => {
+              const IconComponent = skillIcons[skill];
+              return IconComponent ? (
+                <IconComponent 
+                  key={skill} 
+                  className="text-xl lg:text-2xl text-white hover:text-gray-300 transition-colors" 
+                  title={skill}
+                />
+              ) : (
+                <span 
+                  key={skill} 
+                  className="text-xs bg-white text-black px-2 py-1 rounded"
+                >
+                  {skill}
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>

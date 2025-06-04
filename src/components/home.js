@@ -115,11 +115,11 @@ const Home = () => {
             <Element name="about" id="about">
                 <About />
             </Element>
-            <Element name="hobbies" id="hobbies">
-                <Hobbie />
-            </Element>
             <Element name="projects" id="projects">
                 <Projects />
+            </Element>
+            <Element name="hobbies" id="hobbies">
+                <Hobbie />
             </Element>
             <Element name="contact" id="contact">
                 <ContactForm />
